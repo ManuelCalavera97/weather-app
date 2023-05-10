@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import {
   DayCloudy,
   DayFog,
@@ -14,50 +14,88 @@ import {
   Thermometer,
 } from "../assets/WeatherIcons";
 
-const mapDayWeather = (weatherCode: number) => {
+const mapDayWeatherCode = (
+  weatherCode: number
+): { icon: ReactElement; label: string } => {
   switch (weatherCode) {
     case 0:
-      return <DaySunny width={220} height={120} />;
+      return {
+        icon: <DaySunny width={70} height={55} />,
+        label: "Clear sky",
+      };
     case 1:
     case 2:
     case 3:
-      return <DayCloudy width={220} height={120} />;
+      return {
+        icon: <DayCloudy width={70} height={55} />,
+        label: "Partly cloudy",
+      };
     case 45:
     case 48:
-      return <DayFog width={220} height={120} />;
+      return {
+        icon: <DayFog width={70} height={55} />,
+        label: "Fog",
+      };
     case 51:
     case 53:
     case 55:
-      return <DayRainMix width={220} height={120} />;
+      return {
+        icon: <DayRainMix width={70} height={55} />,
+        label: "Drizzle",
+      };
     case 56:
     case 57:
-      return <DayHail width={220} height={120} />;
+      return {
+        icon: <DayHail width={70} height={55} />,
+        label: "Freezing Drizzle",
+      };
     case 61:
     case 63:
     case 65:
-      return <DayRain width={220} height={120} />;
+      return {
+        icon: <DayRain width={70} height={55} />,
+        label: "Rain",
+      };
     case 66:
     case 67:
-      return <DayRainWind width={220} height={120} />;
+      return {
+        icon: <DayRainWind width={70} height={55} />,
+        label: "Freezing Rain",
+      };
     case 71:
     case 73:
     case 75:
     case 77:
-      return <DaySnow width={220} height={120} />;
+      return {
+        icon: <DaySnow width={70} height={55} />,
+        label: "Snow fall",
+      };
     case 80:
     case 81:
     case 82:
-      return <DayStormShowers width={220} height={120} />;
+      return {
+        icon: <DayStormShowers width={70} height={55} />,
+        label: "Rain showers",
+      };
     case 85:
     case 86:
-      return <DaySnowWind width={220} height={120} />;
+      return {
+        icon: <DaySnowWind width={70} height={55} />,
+        label: "Snow showers",
+      };
     case 95:
     case 96:
     case 99:
-      return <DayThunderstorm width={220} height={120} />;
+      return {
+        icon: <DayThunderstorm width={70} height={55} />,
+        label: "Thunderstorm",
+      };
     default:
-      return <Thermometer width={220} height={120} />;
+      return {
+        icon: <Thermometer width={70} height={55} />,
+        label: "Weather status not avaliable",
+      };
   }
 };
 
-export default mapDayWeather;
+export default mapDayWeatherCode;

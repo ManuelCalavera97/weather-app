@@ -36,7 +36,7 @@ const SearchBar = (props: SearchBarProps) => {
 
   return (
     <View className="flex-1 flex justify-center flex-row gap-3">
-      <View className="flex-1 shadow-sm">
+      <View className="flex-1 shadow-md">
         <GooglePlacesAutocomplete
           placeholder="Search your city"
           onPress={(_, details = null) => {
@@ -84,7 +84,7 @@ const SearchBar = (props: SearchBarProps) => {
         <ButtonWrapper
           wrapperClass={`${
             props.location.isLoading ? "bg-slate-100" : "bg-white"
-          } border border-slate-100 rounded-full py-2 px-2 shadow-sm`}
+          } border border-slate-100 rounded-full py-2 px-2 shadow-md`}
           onPress={getGeoLocation}
           disabled={props.location.isLoading}
         >
