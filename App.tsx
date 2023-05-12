@@ -11,7 +11,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <View
         style={styles.container}
-        className="flex-1 items-center justify-center bg-slate-50 p-10"
+        className="flex-1 items-center justify-center bg-slate-50"
       >
         <Main></Main>
         <StatusBar style="auto" />

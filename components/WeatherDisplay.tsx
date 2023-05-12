@@ -7,7 +7,7 @@ import { TimePeriod } from "../types/time";
 import { weather } from "../types/weather";
 
 type WeatherDisplayProps = {
-  locationName: string;
+  locationName?: string;
   timePeriod: TimePeriod;
 } & weather;
 
@@ -80,11 +80,15 @@ const WeatherDisplay = (props: WeatherDisplayProps) => {
   };
 
   return (
-    <View className="flex gap-6 justify-center items-stretch">
+    <View className="flex gap-6 justify-center items-stretch w-full">
       <View className="flex-1 flex flex-row justify-between items-center px-4 py-2 bg-white rounded-md shadow-sm">
-        <View className="items-baseline">
-          <Text className="font-medium text-lg text-slate-900 leading-6 text-left">
-            {props.locationName}
+        <View className="flex items-baseline flex-1">
+          <Text
+            className={`font-medium text-lg leading-6 text-left ${
+              props.locationName ? "text-slate-900" : "text-red-800"
+            }`}
+          >
+            {props.locationName ?? "Location name not found"}
           </Text>
           <Text className="font-medium text-center text-slate-600">
             {weatherCodeProps.label}

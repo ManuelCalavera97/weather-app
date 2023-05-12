@@ -14,7 +14,7 @@ type SearchBarProps = {
 
 const SearchBar = (props: SearchBarProps) => {
   const getGeoLocation = async () => {
-    props.onLocationChange({ isLoading: true });
+    props.onLocationChange({ isLoading: true, error: undefined });
     let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
       props.onLocationChange({
@@ -23,15 +23,23 @@ const SearchBar = (props: SearchBarProps) => {
       });
       return;
     }
-    let location = await Location.getCurrentPositionAsync({});
-
-    props.onLocationChange({
-      isLoading: false,
-      pos: {
-        lat: location.coords.latitude,
-        lng: location.coords.longitude,
-      },
-    });
+    try {
+      let location = await Location.getCurrentPositionAsync({});
+      props.onLocationChange({
+        isLoading: false,
+        error: undefined,
+        pos: {
+          lat: location.coords.latitude,
+          lng: location.coords.longitude,
+        },
+      });
+    } catch {
+      props.onLocationChange({
+        isLoading: false,
+        error:
+          "Something went wrong, please try again or use location search field",
+      });
+    }
   };
 
   return (
@@ -42,6 +50,7 @@ const SearchBar = (props: SearchBarProps) => {
           onPress={(_, details = null) => {
             props.onLocationChange({
               isLoading: false,
+              error: undefined,
               pos: {
                 lat: details.geometry.location.lat,
                 lng: details.geometry.location.lng,
@@ -62,6 +71,7 @@ const SearchBar = (props: SearchBarProps) => {
           fetchDetails={true}
           query={{
             key: Constants.expoConfig.extra.googlePlacesKey,
+            type: "(cities)",
           }}
           styles={{
             textInput: {

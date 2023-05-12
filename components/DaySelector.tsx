@@ -29,9 +29,6 @@ const DaySelector = (props: DaySelectorProps) => {
         buttonColor={props.disabled ? "#cbd5e1" : "#3b82f6"}
         borderColor={props.disabled ? "#f1f5f9" : "#FFF"}
         backgroundColor={props.disabled ? "#f1f5f9" : "#FFF"}
-        style={{
-          opacity: props.disabled ? 0.5 : 1,
-        }}
         disabled={props.disabled}
       />
     </SafeAreaView>
