@@ -9,10 +9,10 @@ import {
   View,
 } from "react-native";
 
-import DaySelector from "../components/DaySelector";
-import ErrorDisplay from "../components/ErrorDisplay";
-import SearchBar from "../components/SearchBar";
-import WeatherDisplay from "../components/WeatherDisplay";
+import DaySelector from "../components/DaySelector/DaySelector";
+import ErrorDisplay from "../components/ErrorDisplay/ErrorDisplay";
+import SearchBar from "../components/SearchBar/SearchBar";
+import WeatherDisplay from "../components/WeatherDisplay/WeatherDisplay";
 import { mapWeatherData } from "../helpers/mapWeatherData";
 import { getLocByPos } from "../services/places";
 import { getWeather } from "../services/weather";
@@ -48,13 +48,13 @@ const Main = () => {
   const error = location.error || locationInfo.error || weatherInfo.error;
 
   return (
-    <SafeAreaView className="flex-1 self-stretch relative">
-      <View className="absolute top-0 w-full z-10 px-10">
+    <SafeAreaView className="relative flex-1 self-stretch">
+      <View className="absolute top-0 z-10 w-full px-10">
         <SearchBar onLocationChange={setLocation} location={location} />
       </View>
       {loading && <ActivityIndicator size="large" className="h-full" />}
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View className="flex-1 flex items-center justify-center mt-16 mb-8 px-4">
+        <View className="mb-8 mt-16 flex flex-1 items-center justify-center px-4">
           <ErrorDisplay error={error} />
           {mappedWeatherData && (
             <WeatherDisplay
@@ -65,7 +65,7 @@ const Main = () => {
           )}
         </View>
       </ScrollView>
-      <View className="absoulte bottom-0 w-full mt-auto z-10 px-10">
+      <View className="absoulte bottom-0 z-10 mt-auto w-full px-10">
         <DaySelector
           setTimePeriod={setTimePeriod}
           timePeriod={timePeriod}

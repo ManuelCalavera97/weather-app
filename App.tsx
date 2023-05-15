@@ -1,8 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { View, StyleSheet } from "react-native";
-import Main from "./screens/Main";
-import Constants from "expo-constants";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Constants from "expo-constants";
+import { StatusBar } from "expo-status-bar";
+
+import { StyleSheet, View } from "react-native";
+
+import Main from "./screens/Main";
 
 const queryClient = new QueryClient();
 

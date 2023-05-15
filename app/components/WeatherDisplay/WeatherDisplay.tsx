@@ -5,9 +5,9 @@ import React from "react";
 import { ScrollView, Text, View } from "react-native";
 import { Dimensions } from "react-native";
 
-import mapDayWeatherCode from "../helpers/mapWeatherIcons";
-import { TimePeriod } from "../types/time";
-import { weather } from "../types/weather";
+import mapDayWeatherCode from "../../helpers/mapWeatherIcons";
+import { TimePeriod } from "../../types/time";
+import { weather } from "../../types/weather";
 
 type WeatherDisplayProps = {
   locationName?: string;
@@ -83,30 +83,30 @@ const WeatherDisplay = (props: WeatherDisplayProps) => {
   };
 
   return (
-    <View className="flex gap-6 justify-center items-stretch w-full">
-      <View className="flex-1 flex flex-row justify-between items-center px-4 py-2 bg-white rounded-md shadow-sm">
-        <View className="flex items-baseline flex-1">
+    <View className="flex w-full items-stretch justify-center gap-6">
+      <View className="flex flex-1 flex-row items-center justify-between rounded-md bg-white px-4 py-2 shadow-sm">
+        <View className="flex flex-1 items-baseline">
           <Text
-            className={`font-medium text-lg leading-6 text-left ${
+            className={`text-left text-lg font-medium leading-6 ${
               props.locationName ? "text-slate-900" : "text-red-800"
             }`}
           >
             {props.locationName ?? "Location name not found"}
           </Text>
-          <Text className="font-medium text-center text-slate-600">
+          <Text className="text-center font-medium text-slate-600">
             {weatherCodeProps.label}
           </Text>
-          <Text className="font-medium text-center text-slate-600">
+          <Text className="text-center font-medium text-slate-600">
             {props.currentWeatherTemp}°C
           </Text>
         </View>
         <View className="mt-1">{weatherCodeProps.icon}</View>
       </View>
-      <View className="flex-1 h-min bg-white rounded-md shadow-sm">
+      <View className="h-min flex-1 rounded-md bg-white shadow-sm">
         <View className="px-4 py-2 text-slate-900">
           <Text>{weatherLabels.title}</Text>
         </View>
-        <View className="h-0.5 bg-slate-200 mv-1" />
+        <View className="mv-1 h-0.5 bg-slate-200" />
         <ScrollView
           horizontal={true}
           stickyHeaderIndices={[1]}

@@ -23,7 +23,7 @@ const ErrorDisplay = (props: ErrorDisplayProps) => {
     return null;
   }
   return (
-    <View className="px-4 py-2 bg-red-50 rounded-md shadow-sm">
+    <View className="rounded-md bg-red-50 px-4 py-2 shadow-sm">
       <Text>{errorMessage}</Text>
     </View>
   );

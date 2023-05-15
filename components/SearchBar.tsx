@@ -1,11 +1,14 @@
-import React from "react";
-import * as Location from "expo-location";
-import { View } from "react-native";
-import ButtonWrapper from "./ButtonWrapper";
-import { MapPinIcon } from "react-native-heroicons/outline";
-import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import Constants from "expo-constants";
+import * as Location from "expo-location";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { MapPinIcon } from "react-native-heroicons/outline";
+
+import React from "react";
+
+import { View } from "react-native";
+
 import { location } from "../types/location";
+import ButtonWrapper from "./ButtonWrapper";
 
 type SearchBarProps = {
   onLocationChange: (location: location) => void;
