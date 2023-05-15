@@ -15,7 +15,7 @@ export default function App() {
         style={{
           paddingTop: Constants.statusBarHeight + 10,
         }}
-        className="h-full fixed items-center justify-center bg-slate-50"
+        className="h-full fixed items-center justify-center bg-slate-50 pb-4"
       >
         <Main></Main>
         <StatusBar style="auto" />
