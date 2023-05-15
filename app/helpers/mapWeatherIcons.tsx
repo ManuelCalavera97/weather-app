@@ -18,49 +18,54 @@ import {
 const mapDayWeatherCode = (
   weatherCode: number
 ): { icon: ReactElement; label: string } => {
+  const iconProps = {
+    width: 70,
+    height: 55,
+    fill: "black",
+  };
   switch (weatherCode) {
     case 0:
       return {
-        icon: <DaySunny width={70} height={55} />,
+        icon: <DaySunny {...iconProps} />,
         label: "Clear sky",
       };
     case 1:
     case 2:
     case 3:
       return {
-        icon: <DayCloudy width={70} height={55} />,
+        icon: <DayCloudy {...iconProps} />,
         label: "Partly cloudy",
       };
     case 45:
     case 48:
       return {
-        icon: <DayFog width={70} height={55} />,
+        icon: <DayFog {...iconProps} />,
         label: "Fog",
       };
     case 51:
     case 53:
     case 55:
       return {
-        icon: <DayRainMix width={70} height={55} />,
+        icon: <DayRainMix {...iconProps} />,
         label: "Drizzle",
       };
     case 56:
     case 57:
       return {
-        icon: <DayHail width={70} height={55} />,
+        icon: <DayHail {...iconProps} />,
         label: "Freezing Drizzle",
       };
     case 61:
     case 63:
     case 65:
       return {
-        icon: <DayRain width={70} height={55} />,
+        icon: <DayRain {...iconProps} />,
         label: "Rain",
       };
     case 66:
     case 67:
       return {
-        icon: <DayRainWind width={70} height={55} />,
+        icon: <DayRainWind {...iconProps} />,
         label: "Freezing Rain",
       };
     case 71:
@@ -68,32 +73,32 @@ const mapDayWeatherCode = (
     case 75:
     case 77:
       return {
-        icon: <DaySnow width={70} height={55} />,
+        icon: <DaySnow {...iconProps} />,
         label: "Snow fall",
       };
     case 80:
     case 81:
     case 82:
       return {
-        icon: <DayStormShowers width={70} height={55} />,
+        icon: <DayStormShowers {...iconProps} />,
         label: "Rain showers",
       };
     case 85:
     case 86:
       return {
-        icon: <DaySnowWind width={70} height={55} />,
+        icon: <DaySnowWind {...iconProps} />,
         label: "Snow showers",
       };
     case 95:
     case 96:
     case 99:
       return {
-        icon: <DayThunderstorm width={70} height={55} />,
+        icon: <DayThunderstorm {...iconProps} />,
         label: "Thunderstorm",
       };
     default:
       return {
-        icon: <Thermometer width={70} height={55} />,
+        icon: <Thermometer {...iconProps} />,
         label: "Weather status not avaliable",
       };
   }

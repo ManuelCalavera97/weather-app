@@ -50,7 +50,7 @@ const GeoButton = (props: GeoButtonProps) => {
       onPress={getGeoLocation}
       disabled={props.location.isLoading}
     >
-      <MapPinIcon />
+      <MapPinIcon color="#3b82f6" />
     </ButtonWrapper>
   );
 };

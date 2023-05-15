@@ -47,8 +47,8 @@ const GoogleSearch = (props: GoogleSearchProps) => {
           backgroundColor: props.location.isLoading ? "#f1f5f9" : "#FFFFFF",
         },
         poweredContainer: {
-          borderBottomRightRadius: "100%",
-          borderBottomLeftRadius: "100%",
+          borderBottomRightRadius: 100,
+          borderBottomLeftRadius: 100,
           paddingEnd: 30,
         },
       }}
