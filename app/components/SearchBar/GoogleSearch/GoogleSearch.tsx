@@ -3,7 +3,7 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 
 import React from "react";
 
-import { location } from "../../../types/location";
+import { location } from "@customTypes/location";
 
 type GoogleSearchProps = {
   onLocationChange: (location: location) => void;

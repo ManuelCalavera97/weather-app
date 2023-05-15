@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import { geoPos } from "../types/location";
-import { TimePeriod } from "../types/time";
+import { geoPos } from "@customTypes/location";
+import { TimePeriod } from "@customTypes/time";
 
 export const getWeather = async (pos: geoPos, timePeriod: TimePeriod) => {
   const timeParams =

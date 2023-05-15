@@ -3,8 +3,9 @@ import { MapPinIcon } from "react-native-heroicons/outline";
 
 import React from "react";
 
-import { location } from "../../../types/location";
-import ButtonWrapper from "../../ButtonWrapper/ButtonWrapper";
+import ButtonWrapper from "@components/ButtonWrapper/ButtonWrapper";
+
+import { location } from "@customTypes/location";
 
 type GeoButtonProps = {
   onLocationChange: (location: location) => void;

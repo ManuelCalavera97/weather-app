@@ -2,9 +2,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Constants from "expo-constants";
 import { StatusBar } from "expo-status-bar";
 
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 
-import Main from "./screens/Main";
+import Main from "@screens/Main";
 
 const queryClient = new QueryClient();
 
@@ -12,8 +12,10 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <View
-        style={styles.container}
-        className="flex-1 items-center justify-center bg-slate-50"
+        style={{
+          paddingTop: Constants.statusBarHeight + 10,
+        }}
+        className="h-full fixed items-center justify-center bg-slate-50"
       >
         <Main></Main>
         <StatusBar style="auto" />
@@ -21,9 +23,3 @@ export default function App() {
     </QueryClientProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: Constants.statusBarHeight + 10,
-  },
-});

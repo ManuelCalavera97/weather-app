@@ -4,7 +4,7 @@ import React from "react";
 
 import { SafeAreaView } from "react-native";
 
-import { TimePeriod } from "../../types/time";
+import { TimePeriod } from "@customTypes/time";
 
 type DaySelectorProps = {
   setTimePeriod: (timePeriod: TimePeriod) => void;

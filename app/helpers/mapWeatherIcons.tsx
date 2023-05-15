@@ -13,7 +13,7 @@ import {
   DaySunny,
   DayThunderstorm,
   Thermometer,
-} from "../assets/WeatherIcons";
+} from "@assets/WeatherIcons";
 
 const mapDayWeatherCode = (
   weatherCode: number

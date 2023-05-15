@@ -9,15 +9,18 @@ import {
   View,
 } from "react-native";
 
-import DaySelector from "../components/DaySelector/DaySelector";
-import ErrorDisplay from "../components/ErrorDisplay/ErrorDisplay";
-import SearchBar from "../components/SearchBar/SearchBar";
-import WeatherDisplay from "../components/WeatherDisplay/WeatherDisplay";
-import { mapWeatherData } from "../helpers/mapWeatherData";
-import { getLocByPos } from "../services/places";
-import { getWeather } from "../services/weather";
-import { location } from "../types/location";
-import { TimePeriod } from "../types/time";
+import DaySelector from "@components/DaySelector/DaySelector";
+import ErrorDisplay from "@components/ErrorDisplay/ErrorDisplay";
+import SearchBar from "@components/SearchBar/SearchBar";
+import WeatherDisplay from "@components/WeatherDisplay/WeatherDisplay";
+
+import { location } from "@customTypes/location";
+import { TimePeriod } from "@customTypes/time";
+
+import { mapWeatherData } from "@helpers/mapWeatherData";
+
+import { getLocByPos } from "@services/places";
+import { getWeather } from "@services/weather";
 
 const Main = () => {
   const [location, setLocation] = useState<location>({ isLoading: false });
@@ -60,7 +63,7 @@ const Main = () => {
             <WeatherDisplay
               locationName={formattedLocation}
               timePeriod={timePeriod}
-              {...mappedWeatherData}
+              weather={mappedWeatherData}
             />
           )}
         </View>

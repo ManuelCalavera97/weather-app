@@ -4,10 +4,10 @@ module.exports = {
     slug: "WeatherApp",
     version: "1.0.0",
     orientation: "portrait",
-    icon: "./assets/icon.png",
+    icon: "./app/assets/icon.png",
     userInterfaceStyle: "light",
     splash: {
-      image: "./assets/splash.png",
+      image: "./app/assets/splash.png",
       resizeMode: "contain",
       backgroundColor: "#ffffff",
     },
@@ -17,12 +17,12 @@ module.exports = {
     },
     android: {
       adaptiveIcon: {
-        foregroundImage: "./assets/adaptive-icon.png",
+        foregroundImage: "./app/assets/adaptive-icon.png",
         backgroundColor: "#ffffff",
       },
     },
     web: {
-      favicon: "./assets/favicon.png",
+      favicon: "./app/assets/favicon.png",
     },
     plugins: [
       [

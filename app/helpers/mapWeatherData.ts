@@ -1,13 +1,15 @@
-import { TimePeriod } from "../types/time";
-import { weather } from "../types/weather";
+import { TimePeriod } from "@customTypes/time";
+import { weather } from "@customTypes/weather";
 
 export const mapWeatherData = (
   weatherData,
   timePeriod: TimePeriod
 ): weather => {
   let weather: weather = {
-    currentWeatherCode: weatherData.current_weather.weathercode,
-    currentWeatherTemp: weatherData.current_weather.temperature,
+    simpleWeather: {
+      currentWeatherCode: weatherData.current_weather.weathercode,
+      currentWeatherTemp: weatherData.current_weather.temperature,
+    },
     isDaily: false,
   };
   if (weatherData?.daily) {

@@ -2,7 +2,8 @@ import React from "react";
 
 import { View } from "react-native";
 
-import { location } from "../../types/location";
+import { location } from "@customTypes/location";
+
 import GeoButton from "./GeoButton/GeoButton";
 import GoogleSearch from "./GoogleSearch/GoogleSearch";
 

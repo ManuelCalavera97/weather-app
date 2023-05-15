@@ -1,5 +1,15 @@
 {
-  "importOrder": ["^react$", "^react-native$", "^components/(.*)$", "^[./]"],
+  "importOrder": [
+    "^react$",
+    "^react-native$",
+    "^@assets/(.*)",
+    "^@components/(.*)",
+    "^@customTypes/(.*)",
+    "^@helpers/(.*)",
+    "^@screens/(.*)",
+    "^@services/(.*)",
+    "^[./]"
+  ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

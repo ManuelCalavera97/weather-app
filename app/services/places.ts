@@ -1,7 +1,7 @@
 import axios from "axios";
 import Constants from "expo-constants";
 
-import { geoPos } from "../types/location";
+import { geoPos } from "@customTypes/location";
 
 export const getLocByPos = async (pos: geoPos) => {
   const { data } = await axios.get(
